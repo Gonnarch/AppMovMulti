@@ -11,12 +11,13 @@ Future<Uint8List?> pickPhoto(BuildContext context) async {
     );
     return await file?.readAsBytes();
   } catch (_) {
-    if (context.mounted)
+    if (context.mounted) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
           content: Text('No se pudo abrir la foto. Intenta nuevamente.'),
         ),
       );
+    }
     return null;
   }
 }

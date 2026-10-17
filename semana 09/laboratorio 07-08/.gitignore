@@ -11,3 +11,6 @@ android/.gradle/
 android/key.properties
 *.jks
 *.keystore
+
+android/.kotlin/
+coverage/

@@ -11,10 +11,10 @@ flutter pub get
 flutter run -d chrome
 ```
 
-Para generar la estructura Android y ejecutar en un emulador o dispositivo:
+La estructura Android ya está incluida. Con un emulador encendido o un dispositivo conectado:
 
 ```sh
-flutter create --platforms=android .
+flutter pub get
 flutter run
 ```
 
@@ -74,3 +74,22 @@ El proyecto requiere Flutter estable reciente compatible con Dart 3.8 o superior
 
 
 Verificación final: flutter build web terminó correctamente y generó build/web. La revisión visual interactiva en dispositivo sigue pendiente.
+
+
+## Correcciones Android y pruebas
+
+- Se desactivó la compilación incremental de Kotlin y se configuró la ejecución en el proceso de Gradle para evitar el fallo de cachés de image_picker_android observado en Windows.
+- Se reemplazó la prueba del contador generada por Flutter por una prueba de validación e ingreso al menú de AulaApp.
+- Se agregaron flutter_test y flutter_lints como dependencias de desarrollo y se corrigieron las observaciones de estilo.
+- Verificado: flutter analyze sin observaciones; flutter test pasó; flutter build apk --debug generó el APK correctamente. Se instaló y abrió en el emulador Pixel 7.
+
+Para volver a comprobar:
+
+```sh
+flutter pub get
+flutter analyze
+flutter test
+flutter run
+```
+
+Se excluyen del repositorio las cachés, los APK generados y la configuración local del SDK. Los errores antiguos mostrados en la terminal pertenecen a compilaciones anteriores a estas correcciones.

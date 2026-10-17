@@ -205,8 +205,9 @@ class _AulaHomeState extends State<AulaHome> {
                 const SizedBox(height: 24),
                 FilledButton(
                   onPressed: () {
-                    if (loginKey.currentState!.validate())
+                    if (loginKey.currentState!.validate()) {
                       Navigator.pushReplacementNamed(context, AppRoutes.menu);
+                    }
                   },
                   child: const Text('Ingresar a mi aula  →'),
                 ),

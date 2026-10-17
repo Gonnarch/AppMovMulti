@@ -111,7 +111,7 @@ class _StudentFormState extends State<StudentForm> {
               const SizedBox(height: 24),
               FilledButton.icon(
                 onPressed: () {
-                  if (keyForm.currentState!.validate())
+                  if (keyForm.currentState!.validate()) {
                     widget.onSave(
                       Student(
                         name.text.trim(),
@@ -120,6 +120,7 @@ class _StudentFormState extends State<StudentForm> {
                         photo,
                       ),
                     );
+                  }
                 },
                 icon: const Icon(Icons.check_circle_outline),
                 label: const Text('Guardar alumno'),
